@@ -1,0 +1,41 @@
+// Bouton submit form
+.sendBtn {
+  display: inline-block;
+  border-radius: 12px;
+  background-color: $secondary-color;
+  font-family: $font-text;
+  border: none;
+  color: $primary-color;
+  text-align: center;
+  font-size: 17px;
+  padding: 16px;
+  width: 130px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+
+  .sendSpan {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+
+    &:after {
+      content: "»";
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -15px;
+      transition: 0.5s;
+    }
+  }
+
+  &:hover .sendSpan {
+    padding-right: 15px;
+  }
+
+  &:hover .sendSpan:after {
+    opacity: 1;
+    right: 0;
+  }
+}

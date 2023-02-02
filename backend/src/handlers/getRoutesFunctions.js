@@ -1,3 +1,10 @@
 // const database = require("../../database");
 
-module.exports = {};
+/* WELCOME MESSAGE */
+const welcome = (req, res) => {
+  res.send("Welcome to the backend !");
+};
+
+module.exports = {
+  welcome,
+};
