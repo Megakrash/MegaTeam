@@ -69,7 +69,7 @@ function Burger({ isBurgerClicked = false, setIsBurgerClicked }) {
               <FaUser className="login-icon" /> Log in
             </button>
           </NavLink>
-          <NavLink to="/registration">
+          <NavLink to="/signin">
             <button
               className="btn btn-signin"
               type="button"

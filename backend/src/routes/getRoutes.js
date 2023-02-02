@@ -8,6 +8,6 @@ const getRoutesFunctions = require("../handlers/getRoutesFunctions");
 router.get("/", verifyToken, getRoutesFunctions.welcome);
 
 /* users */
-router.get("/users", getRoutesFunctions.getUsers);
+// router.get("/users", getRoutesFunctions.getUsers);
 
 module.exports = router;

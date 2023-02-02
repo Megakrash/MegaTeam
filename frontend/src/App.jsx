@@ -5,6 +5,7 @@ import UserContext from "./context/UserContext";
 
 const Home = lazy(() => import("@pages/Home"));
 const NavBar = lazy(() => import("@components/navbar/NavBar"));
+const SignIn = lazy(() => import("@components/signin/SignIn"));
 
 function App() {
   const [userContext] = useState({
@@ -26,6 +27,7 @@ function App() {
           <NavBar />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/signin" element={<SignIn />} />
           </Routes>
         </UserContext.Provider>
       </Suspense>
