@@ -4,11 +4,11 @@ import { Routes, Route } from "react-router-dom";
 import UserContext from "./context/UserContext";
 
 const Home = lazy(() => import("@pages/Home"));
+const NavBar = lazy(() => import("@components/navbar/NavBar"));
 
 function App() {
   const [userContext] = useState({
     userToken: "",
-    isAdmin: "",
     id: "",
   });
 
@@ -23,6 +23,7 @@ function App() {
         }
       >
         <UserContext.Provider value={userContext}>
+          <NavBar />
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>
