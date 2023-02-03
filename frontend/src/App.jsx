@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useState } from "react";
+import React, { lazy, Suspense, useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import UserContext from "./context/UserContext";
@@ -6,12 +6,20 @@ import UserContext from "./context/UserContext";
 const Home = lazy(() => import("@pages/Home"));
 const NavBar = lazy(() => import("@components/navbar/NavBar"));
 const SignIn = lazy(() => import("@components/signin/SignIn"));
+const Login = lazy(() => import("@components/login/Login"));
+const Profil = lazy(() => import("@components/profil/Profil"));
 
 function App() {
-  const [userContext] = useState({
+  const [userContext, setUserContext] = useState({
     userToken: "",
     id: "",
   });
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      setUserContext(JSON.parse(localStorage.getItem("token")));
+    }
+  }, []);
 
   return (
     <div className="App">
@@ -28,6 +36,11 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/signin" element={<SignIn />} />
+            <Route
+              path="/login"
+              element={<Login setUserContext={setUserContext} />}
+            />
+            <Route path="/profil" element={<Profil />} />
           </Routes>
         </UserContext.Provider>
       </Suspense>

@@ -9,5 +9,6 @@ router.get("/", verifyToken, getRoutesFunctions.welcome);
 
 /* users */
 // router.get("/users", getRoutesFunctions.getUsers);
+router.get("/users/:id", getRoutesFunctions.getUserById);
 
 module.exports = router;

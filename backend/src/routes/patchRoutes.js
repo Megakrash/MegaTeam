@@ -1,10 +1,10 @@
 const express = require("express");
-// const { hashPassword } = require("../handlers/auth");
+const { hashPassword } = require("../handlers/auth");
 
 const router = express.Router();
 
-// const patchRoutesFunctions = require("../handlers/patchRoutesFunctions");
+const patchRoutesFunctions = require("../handlers/patchRoutesFunctions");
 
-// router.patch("/videos/:id", patchRoutesFunctions.patchVideoById);
+router.patch("/users/:id", hashPassword, patchRoutesFunctions.patchUserById);
 
 module.exports = router;

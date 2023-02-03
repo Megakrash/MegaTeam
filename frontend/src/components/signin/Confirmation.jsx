@@ -5,16 +5,16 @@ function Confirmation() {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <h2>Congratulations & welcome !</h2>
+    <div className="confirmation">
+      <h2 className="confirmation_title">Congratulations & welcome !</h2>
       <button
-        className="sendBtn"
+        className="sendBtn confirm_btn"
         type="button"
         onClick={() => {
           navigate("/login");
         }}
       >
-        <span className="sendSpan">Send</span>
+        <span className="sendSpan">Log in ?</span>
       </button>
     </div>
   );

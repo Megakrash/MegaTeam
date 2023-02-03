@@ -17,7 +17,7 @@ function Burger({ isBurgerClicked = false, setIsBurgerClicked }) {
       {userToken && userToken.length > 0 ? (
         <div className="buttons">
           <div className="profile-favorites-container">
-            <NavLink to="/profile">
+            <NavLink to="/profil">
               <div className="btn-profil-image-container">
                 <button
                   className="btn btn-profil"
