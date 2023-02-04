@@ -11,4 +11,8 @@ router.get("/", verifyToken, getRoutesFunctions.welcome);
 // router.get("/users", getRoutesFunctions.getUsers);
 router.get("/users/:id", getRoutesFunctions.getUserById);
 
+/* Team */
+router.get("/team/:id", getRoutesFunctions.getTeamById);
+router.get("/team_user/:id", getRoutesFunctions.getTeamByUser);
+
 module.exports = router;

@@ -24,3 +24,52 @@ ENGINE = InnoDB
 AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
+
+INSERT INTO
+  `megateam`.`user` (nickname, email, password)
+VALUES
+  (
+    'Megakrash',
+    'jscattolini@gmail.com',
+    '$argon2id$v=19$m=65536,t=5,p=1$cSIurvo0WyWRKz8YQTO7TQ$wwaSAUWFZrnJxtZIKIMujmTTXagxQN2CbsoaoWscDtM'
+  ),
+
+-- -----------------------------------------------------
+-- Table `megateam`.`team`
+-- -----------------------------------------------------
+
+DROP TABLE IF EXISTS `megateam`.`team` ;
+
+CREATE TABLE IF NOT EXISTS `megateam`.`team` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `h1` INT NULL DEFAULT NULL,
+  `h2` INT NULL DEFAULT NULL,
+  `h3` INT NULL DEFAULT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `megateam`.`team`
+-- -----------------------------------------------------
+
+DROP TABLE IF EXISTS `megateam`.`team_user` ;
+
+CREATE TABLE IF NOT EXISTS `megateam`.`team_user` (
+  `team_id` INT NULL DEFAULT NULL,
+  `user_id` INT NULL DEFAULT NULL,
+  INDEX `fk_user_id_idx` (`user_id` ASC) VISIBLE,
+  INDEX `fk_team_id_idx` (`team_id` ASC) VISIBLE,
+  CONSTRAINT `fk_user_id`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `megateam`.`user` (`id`),
+  CONSTRAINT `fk_team_id`
+    FOREIGN KEY (`team_id`)
+    REFERENCES `megateam`.`team` (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;

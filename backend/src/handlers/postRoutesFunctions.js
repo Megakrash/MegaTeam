@@ -54,7 +54,41 @@ const getUserByEmailWithPasswordAndPassToNext = (req, res, next) => {
     });
 };
 
+// POST TEAM
+const postTeam = (req, res) => {
+  const { name } = req.body;
+
+  database
+    .query("INSERT INTO team(name) VALUES (?)", [name])
+    .then((data) => {
+      res.status(201).send(data);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error saving the team");
+    });
+};
+/* POST TO LINK THE TEAM TO THE USER */
+
+const attachTeamToUser = (req, res) => {
+  const { teamId, userId } = req.body;
+  database
+    .query("INSERT INTO team_user(team_id, user_id) VALUES (?, ?)", [
+      Number(teamId),
+      Number(userId),
+    ])
+    .then(() => {
+      res.status(201).send({ message: "Team link to the user" });
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error link team to the user");
+    });
+};
+
 module.exports = {
   signInUserByUser,
   getUserByEmailWithPasswordAndPassToNext,
+  postTeam,
+  attachTeamToUser,
 };

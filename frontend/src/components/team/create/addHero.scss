@@ -1,0 +1,53 @@
+.addHero {
+  &_search {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    &_error {
+      font-family: $font-text;
+      font-size: 15px;
+      color: $delete-color;
+    }
+  }
+
+  &_choose {
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &_title {
+      font-family: $font-text;
+      font-size: 15px;
+    }
+
+    &_name {
+      font-family: $font-title;
+      font-size: 20px;
+      color: $tertiary-color;
+    }
+  }
+
+  &_result {
+    &_box {
+      &_title {
+        font-family: $font-text;
+        font-size: 20px;
+        margin-bottom: 2%;
+        margin-top: 2%;
+        margin-left: 2%;
+      }
+
+      &_card {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        &_btn {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

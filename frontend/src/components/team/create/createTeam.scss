@@ -1,0 +1,61 @@
+.createTeam {
+  &_pictures {
+    margin-top: 2%;
+    width: 66%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+
+    &_img {
+      width: 30%;
+      border-radius: 12px;
+      border: 2px solid $secondary-color;
+    }
+  }
+
+  &_add.active {
+    opacity: 1;
+    animation: slideInMenu 700ms ease;
+  }
+
+  @keyframes slideInMenu {
+    0% {
+      right: -200px;
+    }
+
+    60% {
+      right: 20px;
+    }
+
+    100% {
+      right: 10px;
+    }
+  }
+
+  &_add.inactive {
+    opacity: 0;
+    animation: slideOutMenu 700ms ease;
+    transition: all 1000ms ease-in-out;
+  }
+
+  @keyframes slideOutMenu {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  &_add {
+    &_title {
+      margin-top: 3%;
+      margin-bottom: 3%;
+      font-family: $font-text;
+      font-size: 20px;
+    }
+  }
+}

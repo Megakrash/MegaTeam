@@ -16,4 +16,8 @@ router.post(
 // USERS SIGN IN
 router.post("/users", hashPassword, postRoutesFunctions.signInUserByUser);
 
+// TEAM
+router.post("/team", postRoutesFunctions.postTeam);
+router.post("/team_user", postRoutesFunctions.attachTeamToUser);
+
 module.exports = router;
