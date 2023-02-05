@@ -1,0 +1,145 @@
+// Bouton submit form
+.sendBtn {
+  display: inline-block;
+  border-radius: 12px;
+  background-color: $secondary-color;
+  font-family: $font-text;
+  border: none;
+  color: $primary-color;
+  text-align: center;
+  font-size: 17px;
+  padding: 16px;
+  width: 130px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+
+  .sendSpan {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+
+    &:after {
+      content: "»";
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -15px;
+      transition: 0.5s;
+    }
+  }
+
+  &:hover .sendSpan {
+    padding-right: 15px;
+  }
+
+  &:hover .sendSpan:after {
+    opacity: 1;
+    right: 0;
+  }
+}
+
+// Bouton Team Name
+.teamNameBtn {
+  --green: #1bfd9c;
+  font-size: 20px;
+  padding: 0.7em 2.7em;
+  letter-spacing: 0.06em;
+  position: relative;
+  font-family: $font-title;
+  border-radius: 0.6em;
+  overflow: hidden;
+  transition: all 0.3s;
+  line-height: 1.4em;
+  border: 2px solid $secondary-color;
+  background: linear-gradient(
+    to right,
+    rgba(255, 138, 0) 1%,
+    transparent 40%,
+    transparent 60%,
+    rgba(255, 138, 0) 100%
+  );
+  color: $primary-color;
+  background-color: $secondary-color;
+
+  &:hover {
+    color: $primary-color;
+    box-shadow: 4px 4px 20px $secondary-color;
+
+    &:before {
+      transform: translateX(15em);
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: -4em;
+    width: 4em;
+    height: 100%;
+    top: 0;
+    transition: transform 0.4s ease-in-out;
+    background: linear-gradient(
+      to right,
+      transparent 1%,
+      rgba(27, 253, 156, 0.1) 40%,
+      rgba(27, 253, 156, 0.1) 60%,
+      transparent 100%
+    );
+  }
+}
+
+// DELETE BUTTON
+.deleteBtn {
+  font-family: $font-text;
+  font-size: 16px;
+  background-color: $tertiary-color;
+  height: 35px;
+  width: 150px;
+  text-align: center;
+  padding: 0.5em 2em;
+  border-radius: 20px;
+  position: relative;
+  color: $primary-color;
+  text-decoration: none;
+  transition: 0.2s ease all;
+  z-index: 1;
+  cursor: pointer;
+
+  &:before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: "";
+    background-color: $delete-color;
+    z-index: -1;
+  }
+
+  &:hover,
+  &:focus {
+    color: $secondary-color;
+
+    &:before {
+      transition: 0.5s all ease;
+      left: 0;
+      right: 0;
+      opacity: 1;
+      border-radius: 20px;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .deleteBtn {
+    width: 200px;
+  }
+}

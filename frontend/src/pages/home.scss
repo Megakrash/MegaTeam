@@ -1,0 +1,16 @@
+.home {
+  margin-top: 2%;
+
+  &_noToken {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-family: $font-title;
+    font-size: 3em;
+
+    &_link {
+      text-decoration: underline;
+    }
+  }
+}

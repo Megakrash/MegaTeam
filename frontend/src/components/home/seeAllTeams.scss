@@ -1,0 +1,40 @@
+@import "./homeTeamCard.scss";
+
+.seeAllTeams {
+  width: 90%;
+  padding: 2%;
+  margin: auto;
+  margin-top: 4%;
+  background-color: $primary-color;
+  box-shadow: 4px 4px 20px $secondary-color;
+  border-radius: 12px;
+
+  &_card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .seeAllTeams {
+    width: 90%;
+    padding: 2%;
+    margin: auto;
+    margin-top: 4%;
+    background-color: $primary-color;
+    box-shadow: 4px 4px 20px $secondary-color;
+    border-radius: 12px;
+
+    &_card {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      &_team {
+        width: 23%;
+      }
+    }
+  }
+}

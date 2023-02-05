@@ -1,0 +1,15 @@
+.confirmation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+
+  &_title {
+    font-family: $font-title;
+    font-size: 25px;
+  }
+
+  &_btn {
+    align-self: center;
+  }
+}

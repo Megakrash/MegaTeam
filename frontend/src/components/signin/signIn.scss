@@ -1,0 +1,54 @@
+@import "./confirmation.scss";
+
+.signin {
+  width: 80%;
+  padding: 2%;
+  margin: auto;
+  margin-top: 4%;
+  background-color: $primary-color;
+  box-shadow: 4px 4px 20px $secondary-color;
+  border-radius: 12px;
+
+  &_form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 2%;
+
+    &_title {
+      font-family: $font-title;
+      font-size: 22px;
+      color: $tertiary-color;
+    }
+
+    &_box {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      &_label {
+        font-family: $font-text;
+        font-size: 15px;
+      }
+
+      &_input {
+        width: 80%;
+        height: 25px;
+        border-radius: 12px;
+        border-color: $secondary-color;
+        text-indent: 4px;
+        font-family: $font-text;
+      }
+    }
+
+    &_btn {
+      align-self: center;
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .signin {
+    width: 40%;
+  }
+}

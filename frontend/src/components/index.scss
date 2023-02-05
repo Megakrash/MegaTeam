@@ -1,3 +1,12 @@
 @import "./variables.scss";
 @import "./reset.scss";
+@import "./buttons.scss";
+
 @import "../app.scss";
+
+@import "./navbar/navBar.scss";
+@import "./signin/signIn.scss";
+@import "./profil/profil.scss";
+@import "./team/team.scss";
+@import "../pages/home.scss";
+@import "./home/seeAllTeams.scss";
