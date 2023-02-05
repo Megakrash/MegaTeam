@@ -1,12 +1,18 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
-import { NavLink } from "react-router-dom";
-import { FaUser, FaUserPlus, FaPowerOff } from "react-icons/fa";
+import { NavLink, useNavigate } from "react-router-dom";
+import {
+  FaUser,
+  FaUserPlus,
+  FaPowerOff,
+  FaUserSecret,
+  FaUserAstronaut,
+} from "react-icons/fa";
 import UserContext from "../../../context/UserContext";
 
 function Burger({ isBurgerClicked = false, setIsBurgerClicked }) {
-  const { userToken, id } = useContext(UserContext);
-  const inputImgAvatar = useRef();
+  const { userToken } = useContext(UserContext);
+  const navigate = useNavigate();
 
   return (
     <div
@@ -28,22 +34,27 @@ function Burger({ isBurgerClicked = false, setIsBurgerClicked }) {
                 >
                   <FaUser className="signin-icon" /> Profil
                 </button>
-                <img
-                  ref={inputImgAvatar}
-                  className="img-avatar-profil"
-                  src={`${
-                    import.meta.env.VITE_PORT_BACKEND
-                  }/assets/images/avatars/${id}.jpg`}
-                  alt="avatar"
-                  onError={() => {
-                    inputImgAvatar.current.src =
-                      "https://png.pngtree.com/png-clipart/20210129/ourlarge/pngtree-man-default-avatar-png-image_2813122.jpg";
-                  }}
-                />
               </div>
             </NavLink>
           </div>
-
+          <button
+            className="btn btn-team"
+            type="button"
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            <FaUserAstronaut className="logout-icon" /> All teams
+          </button>
+          <button
+            className="btn btn-team"
+            type="button"
+            onClick={() => {
+              navigate("/team");
+            }}
+          >
+            <FaUserSecret className="logout-icon" /> My teams
+          </button>
           <button
             className="btn btn-logout"
             type="button"
@@ -51,6 +62,7 @@ function Burger({ isBurgerClicked = false, setIsBurgerClicked }) {
               localStorage.removeItem("token");
               setIsBurgerClicked(false);
               window.location.reload();
+              navigate("/");
             }}
           >
             <FaPowerOff className="logout-icon" /> Log out

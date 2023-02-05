@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import UserContext from "../../context/UserContext";
 import CreateTeam from "./create/CreateTeam";
 import AllMyTeams from "./showTeams/AllMyTeams";
@@ -7,6 +8,8 @@ import AllMyTeams from "./showTeams/AllMyTeams";
 function Team() {
   const { id } = useContext(UserContext);
   const [allTeam, setAllTeam] = useState("");
+
+  const navigate = useNavigate();
 
   const getAllTeam = () => {
     axios
@@ -17,6 +20,9 @@ function Team() {
       .catch((err) => console.error(err));
   };
   useEffect(() => {
+    if (id === "") {
+      navigate("/");
+    }
     getAllTeam();
   }, []);
 

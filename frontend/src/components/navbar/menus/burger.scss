@@ -57,7 +57,7 @@
     .btn {
       font-family: $font-text;
       font-size: 1.8rem;
-      width: fit-content;
+      width: 105px;
       height: 30px;
       border-radius: 15px;
       padding: 10px;
@@ -71,25 +71,21 @@
     .btn-login {
       background-color: rgb(116, 192, 2);
       cursor: pointer;
+    }
 
-      .login-icon {
-      }
+    .btn-team {
+      cursor: pointer;
+      background-color: $secondary-color;
     }
 
     .btn-logout {
       background-color: rgb(192, 2, 2);
       cursor: pointer;
-
-      .logout-icon {
-      }
     }
 
     .btn-signin {
       background-color: $tertiary-color;
       cursor: pointer;
-
-      .signin-icon {
-      }
     }
 
     .btn-why-signin {
@@ -101,9 +97,6 @@
 
       p {
         margin-top: 3px;
-      }
-
-      .why-signin-icon {
       }
     }
 
@@ -132,6 +125,18 @@
           height: 30px;
           border-radius: 15px;
         }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .menu-burger {
+    min-width: 150px;
+
+    .buttons {
+      .btn {
+        width: 130px;
       }
     }
   }

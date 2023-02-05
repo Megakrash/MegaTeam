@@ -12,6 +12,7 @@ router.get("/", verifyToken, getRoutesFunctions.welcome);
 router.get("/users/:id", getRoutesFunctions.getUserById);
 
 /* Team */
+router.get("/team_user", getRoutesFunctions.getTeam);
 router.get("/team/:id", getRoutesFunctions.getTeamById);
 router.get("/team_user/:id", getRoutesFunctions.getTeamByUser);
 
