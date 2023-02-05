@@ -20,4 +20,7 @@ router.post("/users", hashPassword, postRoutesFunctions.signInUserByUser);
 router.post("/team", postRoutesFunctions.postTeam);
 router.post("/team_user", postRoutesFunctions.attachTeamToUser);
 
+// HERO
+router.post("/hero", postRoutesFunctions.postHero);
+
 module.exports = router;

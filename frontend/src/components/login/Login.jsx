@@ -23,7 +23,7 @@ function Login({ setUserContext }) {
             id: res.data.id,
           })
         );
-        navigate("/");
+        navigate("/team");
         window.location.reload();
       })
 

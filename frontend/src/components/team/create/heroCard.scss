@@ -60,3 +60,13 @@
     }
   }
 }
+
+@media screen and (min-width: 600px) {
+  .heroCard {
+    &_img {
+      img {
+        max-height: 280px;
+      }
+    }
+  }
+}

@@ -86,9 +86,37 @@ const attachTeamToUser = (req, res) => {
     });
 };
 
+// POST HERO
+const postHero = (req, res) => {
+  const {
+    name,
+    url,
+    intelligence,
+    strength,
+    speed,
+    durability,
+    power,
+    combat,
+  } = req.body;
+
+  database
+    .query(
+      "INSERT INTO hero(name, url, intelligence, strength, speed, durability, power, combat) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+      [name, url, intelligence, strength, speed, durability, power, combat]
+    )
+    .then(([result]) => {
+      res.status(201).send(result);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error saving the hero");
+    });
+};
+
 module.exports = {
   signInUserByUser,
   getUserByEmailWithPasswordAndPassToNext,
   postTeam,
   attachTeamToUser,
+  postHero,
 };

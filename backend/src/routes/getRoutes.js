@@ -15,4 +15,7 @@ router.get("/users/:id", getRoutesFunctions.getUserById);
 router.get("/team/:id", getRoutesFunctions.getTeamById);
 router.get("/team_user/:id", getRoutesFunctions.getTeamByUser);
 
+/* Hero */
+router.get("/hero/:id", getRoutesFunctions.getHeroById);
+
 module.exports = router;
