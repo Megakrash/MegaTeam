@@ -134,7 +134,7 @@ function CreateTeam({ userId, getAllTeam }) {
             </div>
           )}
           <p className="congrat">
-            Congratulations !!! You just create a Super team !
+            Congratulations !!! You have a Super team now !
           </p>
           <button
             className="sendBtn"

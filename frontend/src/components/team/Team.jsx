@@ -22,10 +22,14 @@ function Team() {
 
   return (
     <div className="team">
-      <div>
+      <div className="team_create">
         <CreateTeam userId={id} getAllTeam={getAllTeam} />
       </div>
-      <div>{allTeam.length >= 1 && <AllMyTeams allTeam={allTeam} />}</div>
+      <div className="team_show">
+        {allTeam.length >= 1 && (
+          <AllMyTeams allTeam={allTeam} getAllTeam={getAllTeam} />
+        )}
+      </div>
     </div>
   );
 }

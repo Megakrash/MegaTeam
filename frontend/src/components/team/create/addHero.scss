@@ -51,3 +51,26 @@
     }
   }
 }
+
+@media screen and (min-width: 600px) {
+  .addHero {
+    &_result {
+      &_box {
+        display: flex;
+        flex-direction: column;
+
+        &_card {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 15px;
+          width: 100%;
+
+          &_btn {
+            width: 45%;
+          }
+        }
+      }
+    }
+  }
+}

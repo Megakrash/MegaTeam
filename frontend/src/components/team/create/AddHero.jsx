@@ -17,8 +17,13 @@ function AddHero({
   const [searchBar, setSearchBar] = useState("");
   const [result, setResult] = useState("");
   const [heroName, setHeroName] = useState("");
-  const [heroId, setHeroId] = useState("");
   const [heroUrl, setHeroUrl] = useState("");
+  const [intelligence, setIntelligence] = useState("");
+  const [strength, setStrength] = useState("");
+  const [speed, setSpeed] = useState("");
+  const [durability, setDurability] = useState("");
+  const [power, setPower] = useState("");
+  const [combat, setCombat] = useState("");
   const [showResult, setShowResult] = useState(false);
   const [showError, setShowError] = useState(false);
 
@@ -37,42 +42,56 @@ function AddHero({
   };
 
   const addHero = () => {
-    if (heroNumber === "h1") {
-      axios
-        .patch(`${import.meta.env.VITE_PORT_BACKEND}/team/${teamId}`, {
-          h1: heroId,
-        })
-        .then(() => {
-          setShowHero1(false);
-          setShowHero2(true);
-          setUrlHero1(heroUrl);
-        })
-        .catch((err) => console.error(err));
-    }
-    if (heroNumber === "h2") {
-      axios
-        .patch(`${import.meta.env.VITE_PORT_BACKEND}/team/${teamId}`, {
-          h2: heroId,
-        })
-        .then(() => {
-          setShowHero2(false);
-          setShowHero3(true);
-          setUrlHero2(heroUrl);
-        })
-        .catch((err) => console.error(err));
-    }
-    if (heroNumber === "h3") {
-      axios
-        .patch(`${import.meta.env.VITE_PORT_BACKEND}/team/${teamId}`, {
-          h3: heroId,
-        })
-        .then(() => {
-          setShowHero3(false);
-          setUrlHero3(heroUrl);
-          setShowHeroFinal(true);
-        })
-        .catch((err) => console.error(err));
-    }
+    axios
+      .post(`${import.meta.env.VITE_PORT_BACKEND}/hero`, {
+        name: heroName,
+        url: heroUrl,
+        intelligence,
+        strength,
+        speed,
+        durability,
+        power,
+        combat,
+      })
+      .then((res) => {
+        if (heroNumber === "h1") {
+          axios
+            .patch(`${import.meta.env.VITE_PORT_BACKEND}/team/${teamId}`, {
+              h1: res.data.insertId,
+            })
+            .then(() => {
+              setShowHero1(false);
+              setShowHero2(true);
+              setUrlHero1(heroUrl);
+            })
+            .catch((err) => console.error(err));
+        }
+        if (heroNumber === "h2") {
+          axios
+            .patch(`${import.meta.env.VITE_PORT_BACKEND}/team/${teamId}`, {
+              h2: res.data.insertId,
+            })
+            .then(() => {
+              setShowHero2(false);
+              setShowHero3(true);
+              setUrlHero2(heroUrl);
+            })
+            .catch((err) => console.error(err));
+        }
+        if (heroNumber === "h3") {
+          axios
+            .patch(`${import.meta.env.VITE_PORT_BACKEND}/team/${teamId}`, {
+              h3: res.data.insertId,
+            })
+            .then(() => {
+              setShowHero3(false);
+              setUrlHero3(heroUrl);
+              setShowHeroFinal(true);
+            })
+            .catch((err) => console.error(err));
+        }
+      })
+      .catch((err) => console.error(err));
   };
 
   return (
@@ -116,8 +135,13 @@ function AddHero({
                     type="button"
                     onClick={() => {
                       setHeroName(infos.name);
-                      setHeroId(infos.id);
                       setHeroUrl(infos.image.url);
+                      setIntelligence(infos.powerstats.intelligence);
+                      setStrength(infos.powerstats.strength);
+                      setSpeed(infos.powerstats.speed);
+                      setDurability(infos.powerstats.durability);
+                      setPower(infos.powerstats.power);
+                      setCombat(infos.powerstats.combat);
                       window.scrollTo(0, 0);
                     }}
                   >

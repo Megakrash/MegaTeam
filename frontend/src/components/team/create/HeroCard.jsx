@@ -51,12 +51,12 @@ HeroCard.propTypes = {
   image: PropTypes.string.isRequired,
   powerstats: PropTypes.objectOf(
     PropTypes.shape({
-      intelligence: PropTypes.number.isRequired,
-      strengh: PropTypes.number.isRequired,
-      power: PropTypes.number.isRequired,
-      durability: PropTypes.number.isRequired,
-      speed: PropTypes.number.isRequired,
-      combat: PropTypes.number.isRequired,
+      intelligence: PropTypes.string.isRequired,
+      strengh: PropTypes.string.isRequired,
+      power: PropTypes.string.isRequired,
+      durability: PropTypes.string.isRequired,
+      speed: PropTypes.string.isRequired,
+      combat: PropTypes.string.isRequired,
     })
   ).isRequired,
 };

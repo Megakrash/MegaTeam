@@ -1,0 +1,75 @@
+.teamCard {
+  width: 95%;
+  padding: 2%;
+  font-family: $font-text;
+  color: $primary-color;
+  background-color: $secondary-color;
+  border-radius: 12px;
+  box-shadow: 4px 4px 20px $secondary-color;
+
+  &_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &_title {
+      font-family: $font-title;
+      font-size: 25px;
+      color: $tertiary-color;
+    }
+
+    &_hero {
+      margin-top: 1%;
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+
+      &_namePic {
+        display: flex;
+        flex-direction: column;
+        width: 33%;
+        align-items: center;
+        gap: 5px;
+
+        &_name {
+          color: $tertiary-color;
+          font-size: 12px;
+        }
+
+        &_picture {
+          width: 95%;
+          border-radius: 12px;
+          box-shadow: 2px 2px 10px $primary-color;
+        }
+      }
+    }
+
+    &_infos {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 98%;
+      margin-top: 2%;
+      font-size: 12px;
+      gap: 5px;
+
+      &_text {
+        display: flex;
+        flex-direction: column;
+        align-self: baseline;
+
+        &_title2 {
+          font-size: 15px;
+        }
+
+        p span {
+          color: $delete-color;
+        }
+      }
+
+      &_btn {
+      }
+    }
+  }
+}

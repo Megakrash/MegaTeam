@@ -32,7 +32,7 @@ VALUES
     'Megakrash',
     'jscattolini@gmail.com',
     '$argon2id$v=19$m=65536,t=5,p=1$cSIurvo0WyWRKz8YQTO7TQ$wwaSAUWFZrnJxtZIKIMujmTTXagxQN2CbsoaoWscDtM'
-  ),
+  );
 
 -- -----------------------------------------------------
 -- Table `megateam`.`team`
@@ -54,7 +54,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 
 
 -- -----------------------------------------------------
--- Table `megateam`.`team`
+-- Table `megateam`.`team_user`
 -- -----------------------------------------------------
 
 DROP TABLE IF EXISTS `megateam`.`team_user` ;
@@ -71,5 +71,26 @@ CREATE TABLE IF NOT EXISTS `megateam`.`team_user` (
     FOREIGN KEY (`team_id`)
     REFERENCES `megateam`.`team` (`id`))
 ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+-- -----------------------------------------------------
+-- Table `megateam`.`hero`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `megateam`.`hero` ;
+
+CREATE TABLE IF NOT EXISTS `megateam`.`hero` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(255) NULL DEFAULT NULL,
+  `url` VARCHAR(255) NULL DEFAULT NULL,
+  `intelligence` INT NULL DEFAULT NULL,
+  `strength` INT NULL DEFAULT NULL,
+  `speed` INT NULL DEFAULT NULL,
+  `durability` INT NULL DEFAULT NULL,
+  `power` INT NULL DEFAULT NULL,
+  `combat` INT NULL DEFAULT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;

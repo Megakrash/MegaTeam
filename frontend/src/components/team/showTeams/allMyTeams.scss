@@ -1,0 +1,13 @@
+.allMyTeams {
+  &_title {
+    font-family: $font-title;
+    font-size: 20px;
+    margin-bottom: 2%;
+  }
+
+  &_card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

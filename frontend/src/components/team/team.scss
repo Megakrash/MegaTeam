@@ -13,4 +13,25 @@
   background-color: $primary-color;
   box-shadow: 4px 4px 20px $secondary-color;
   border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media screen and (min-width: 600px) {
+  .team {
+    width: 93%;
+    margin-top: 2%;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-between;
+
+    &_create {
+      width: 60%;
+    }
+
+    &_show {
+      width: 35%;
+    }
+  }
 }
