@@ -8,11 +8,12 @@ const NavBar = lazy(() => import("@components/navbar/NavBar"));
 const SignIn = lazy(() => import("@components/signin/SignIn"));
 const Login = lazy(() => import("@components/login/Login"));
 const Profil = lazy(() => import("@components/profil/Profil"));
+const Team = lazy(() => import("@components/team/Team"));
 
 function App() {
   const [userContext, setUserContext] = useState({
-    userToken: "",
     id: "",
+    userToken: "",
   });
 
   useEffect(() => {
@@ -41,6 +42,7 @@ function App() {
               element={<Login setUserContext={setUserContext} />}
             />
             <Route path="/profil" element={<Profil />} />
+            <Route path="/team" element={<Team />} />
           </Routes>
         </UserContext.Provider>
       </Suspense>
