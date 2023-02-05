@@ -25,6 +25,17 @@ const getUserById = (req, res) => {
 };
 
 /* TEAM */
+
+const getTeam = (req, res) => {
+  database
+    .query("SELECT * FROM team_user")
+    .then(([team]) => res.status(200).json(team))
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error retrieving data from database");
+    });
+};
+
 const getTeamById = (req, res) => {
   const id = parseInt(req.params.id, 10);
 
@@ -80,4 +91,5 @@ module.exports = {
   getTeamById,
   getTeamByUser,
   getHeroById,
+  getTeam,
 };

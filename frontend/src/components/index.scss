@@ -4,7 +4,9 @@
 
 @import "../app.scss";
 
-@import "../components/navbar/navBar.scss";
-@import "../components/signin/signIn.scss";
-@import "../components/profil/profil.scss";
-@import "../components/team/team.scss";
+@import "./navbar/navBar.scss";
+@import "./signin/signIn.scss";
+@import "./profil/profil.scss";
+@import "./team/team.scss";
+@import "../pages/home.scss";
+@import "./home/seeAllTeams.scss";

@@ -32,6 +32,11 @@ VALUES
     'Megakrash',
     'jscattolini@gmail.com',
     '$argon2id$v=19$m=65536,t=5,p=1$cSIurvo0WyWRKz8YQTO7TQ$wwaSAUWFZrnJxtZIKIMujmTTXagxQN2CbsoaoWscDtM'
+  ),
+  (
+    'Patator',
+    'jonathanscattolini@hotmail.com',
+    '$argon2id$v=19$m=65536,t=5,p=1$GCcGZUbvHOtx8jh90s8DzA$GBLdNKCtgMGpXchvG5YBcqGc1pyFKa9VfS9OKYJZuac'
   );
 
 -- -----------------------------------------------------
