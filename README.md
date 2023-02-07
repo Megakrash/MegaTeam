@@ -3,7 +3,7 @@
 ### Project Initialization
 
 - Run command `npm run setup`
-- Create .env file in the backend then run command "npm run migrate"
+- Create .env file in the backend use "megateam" as BD name then run command "npm run migrate"
 - Create .env file in the frontend then go to https://www.superheroapi.com/index.html to get a API KEY.
 
 ### Available Commands
